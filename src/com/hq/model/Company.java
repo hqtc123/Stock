@@ -10,10 +10,23 @@ package com.hq.model;
 public class Company {
     private int id;
     private String name;
+
+    public Company(String name, String numStr, int industryId, int sectionId, int regionId) {
+        this.name = name;
+        this.numStr = numStr;
+        this.industryId = industryId;
+        this.sectionId = sectionId;
+        this.regionId = regionId;
+    }
+
     private String numStr;
     private int industryId;
     private int sectionId;
     private int regionId;
+
+    public Company() {
+
+    }
 
     public int getId() {
         return id;

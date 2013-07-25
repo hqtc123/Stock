@@ -14,7 +14,7 @@ public class Price {
     private int companyId;
     private double closePrice;
     private double openPrice;
-    private Date data;
+    private Date date;
 
     public Price() {
     }
@@ -51,11 +51,11 @@ public class Price {
         this.openPrice = openPrice;
     }
 
-    public Date getData() {
-        return data;
+    public Date getDate() {
+        return date;
     }
 
-    public void setData(Date data) {
-        this.data = data;
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

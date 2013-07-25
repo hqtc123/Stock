@@ -5,19 +5,18 @@
     <ignored path="Stock.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="075e7142-7105-447b-ad6d-c0c8a3546655" time="1374680411827" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="075e7142-7105-447b-ad6d-c0c8a3546655" time="1374595206943" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/vcs.xml" changelist="075e7142-7105-447b-ad6d-c0c8a3546655" time="1374406421261" ignored="false" />
     <file path="/GlobalField.java" changelist="075e7142-7105-447b-ad6d-c0c8a3546655" time="1374413091867" ignored="false" />
-    <file path="/ConnManagement.java" changelist="075e7142-7105-447b-ad6d-c0c8a3546655" time="1374414054520" ignored="false" />
+    <file path="/ConnManagement.java" changelist="075e7142-7105-447b-ad6d-c0c8a3546655" time="1374684153070" ignored="false" />
     <file path="/fragment.java" changelist="075e7142-7105-447b-ad6d-c0c8a3546655" time="1374414182890" ignored="false" />
-    <file path="/Price.java" changelist="075e7142-7105-447b-ad6d-c0c8a3546655" time="1374593609448" ignored="false" />
+    <file path="/Price.java" changelist="075e7142-7105-447b-ad6d-c0c8a3546655" time="1374717021328" ignored="false" />
     <file path="/Company.java" changelist="075e7142-7105-447b-ad6d-c0c8a3546655" time="1374415057895" ignored="false" />
     <file path="/Industry.java" changelist="075e7142-7105-447b-ad6d-c0c8a3546655" time="1374415835563" ignored="false" />
     <file path="/Region.java" changelist="075e7142-7105-447b-ad6d-c0c8a3546655" time="1374415768417" ignored="false" />
     <file path="/Section.java" changelist="075e7142-7105-447b-ad6d-c0c8a3546655" time="1374415903849" ignored="false" />
-    <file path="/DataOperation.java" changelist="075e7142-7105-447b-ad6d-c0c8a3546655" time="1374418118057" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/misc.xml" changelist="075e7142-7105-447b-ad6d-c0c8a3546655" time="1374417107377" ignored="false" />
-    <file path="/GetSortInfo.java" changelist="075e7142-7105-447b-ad6d-c0c8a3546655" time="1374596356298" ignored="false" />
+    <file path="/DataOperation.java" changelist="075e7142-7105-447b-ad6d-c0c8a3546655" time="1374717230907" ignored="false" />
+    <file path="/GetSortInfo.java" changelist="075e7142-7105-447b-ad6d-c0c8a3546655" time="1374689516759" ignored="false" />
+    <file path="/GetCompany.java" changelist="075e7142-7105-447b-ad6d-c0c8a3546655" time="1374694407040" ignored="false" />
+    <file path="/GetPrice.java" changelist="075e7142-7105-447b-ad6d-c0c8a3546655" time="1374718311261" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,31 +75,85 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GlobalField.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/hq/config/GlobalField.java">
+      <file leaf-file-name="JSONTokener.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/json-lib-1.1-jdk13.jar!/net/sf/json/util/JSONTokener.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="15" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0">
+            <state line="51" column="0" selection-start="1626" selection-end="1626" vertical-scroll-proportion="-8.72">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Price.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/hq/network/Price.java">
+      <file leaf-file-name="DataOperation.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/hq/database/DataOperation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="13" selection-start="374" selection-end="374" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="348" column="46" selection-start="12750" selection-end="12750" vertical-scroll-proportion="-1.2750809">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4220#4228#0" expanded="true" />
+                <element signature="e#6456#6466#0" expanded="true" />
+                <element signature="e#8972#8981#0" expanded="true" />
+                <element signature="e#12798#12807#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetSortInfo.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GetSortInfo.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/hq/network/GetSortInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="0" selection-start="2207" selection-end="2207" vertical-scroll-proportion="0.56893206">
+            <state line="40" column="13" selection-start="773" selection-end="1193" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Region.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/hq/model/Region.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="24" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetCompany.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/hq/network/GetCompany.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="35" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#955#964#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetPrice.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/hq/network/GetPrice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="101" column="42" selection-start="3317" selection-end="3317" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Company.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/hq/model/Company.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="0" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="String.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.7.0/src.zip!/java/lang/String.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2123" column="33" selection-start="83441" selection-end="83441" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -125,23 +178,25 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/hq/stock/StockInfo.java" />
         <option value="$PROJECT_DIR$/src/com/hq/config/GlobalField.java" />
-        <option value="$PROJECT_DIR$/src/com/hq/database/ConnManagement.java" />
         <option value="$PROJECT_DIR$/src/com/hq/model/StockInfo.java" />
-        <option value="$PROJECT_DIR$/src/com/hq/model/Price.java" />
-        <option value="$PROJECT_DIR$/src/com/hq/model/Company.java" />
-        <option value="$PROJECT_DIR$/src/com/hq/model/Industry.java" />
-        <option value="$PROJECT_DIR$/src/com/hq/model/Region.java" />
-        <option value="$PROJECT_DIR$/src/com/hq/model/Section.java" />
-        <option value="$PROJECT_DIR$/src/com/hq/database/DataOperation.java" />
         <option value="$PROJECT_DIR$/src/com/hq/network/Price.java" />
+        <option value="$PROJECT_DIR$/src/com/hq/database/ConnManagement.java" />
+        <option value="$PROJECT_DIR$/src/com/hq/model/Region.java" />
+        <option value="$PROJECT_DIR$/src/com/hq/model/Industry.java" />
+        <option value="$PROJECT_DIR$/src/com/hq/model/Section.java" />
         <option value="$PROJECT_DIR$/src/com/hq/network/GetSortInfo.java" />
+        <option value="$PROJECT_DIR$/src/com/hq/model/Company.java" />
+        <option value="$PROJECT_DIR$/src/com/hq/network/GetCompany.java" />
+        <option value="$PROJECT_DIR$/src/com/hq/model/Price.java" />
+        <option value="$PROJECT_DIR$/src/com/hq/database/DataOperation.java" />
+        <option value="$PROJECT_DIR$/src/com/hq/network/GetPrice.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="228" />
-    <option name="y" value="6" />
-    <option name="width" value="1038" />
+    <option name="x" value="114" />
+    <option name="y" value="69" />
+    <option name="width" value="1110" />
     <option name="height" value="715" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -181,6 +236,34 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Stock" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Stock" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Stock" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Stock" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hq" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -212,15 +295,15 @@
       <recent name="H:\codes\intellij\Stock\lib" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GetSortInfo">
-    <configuration default="false" name="Price" type="Application" factoryName="Application" temporary="true">
+  <component name="RunManager" selected="Application.GetPrice">
+    <configuration default="false" name="GetPrice" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.hq.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="com.hq.network.Price" />
+      <option name="MAIN_CLASS_NAME" value="com.hq.network.GetPrice" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -249,6 +332,28 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="com.hq.network.GetSortInfo" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Stock" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="GetCompany" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.hq.network.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.hq.network.GetCompany" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -354,14 +459,16 @@
       <patterns />
       <method />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Application.Price" />
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Application.GetPrice" />
       <item index="1" class="java.lang.String" itemvalue="Application.GetSortInfo" />
+      <item index="2" class="java.lang.String" itemvalue="Application.GetCompany" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.GetSortInfo" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Price" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Application.GetPrice" />
+        <item index="1" class="java.lang.String" itemvalue="Application.GetCompany" />
+        <item index="2" class="java.lang.String" itemvalue="Application.GetSortInfo" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -397,12 +504,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="228" y="6" width="1038" height="715" extended-state="0" />
+    <frame x="114" y="69" width="1110" height="715" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39865997" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -411,17 +519,16 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291367" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31211498" sideWeight="0.67001677" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998326" sideWeight="0.99794024" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17590822" sideWeight="0.67086333" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3291367" sideWeight="0.99794024" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998326" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -486,14 +593,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/hq/config/GlobalField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="15" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/hq/network/Price.java">
+    <entry file="file://$PROJECT_DIR$/src/com/hq/network/GetPrice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="13" selection-start="374" selection-end="374" vertical-scroll-proportion="0.0">
           <folding />
@@ -509,65 +609,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/hq/database/ConnManagement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="33" selection-start="472" selection-end="472" vertical-scroll-proportion="1.0526316" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/hq/model/Company.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="0" selection-start="962" selection-end="962" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/hq/model/Industry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="31" selection-start="548" selection-end="548" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/hq/model/Section.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="24" selection-start="298" selection-end="298" vertical-scroll-proportion="0.747191" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/hq/model/Price.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="26" selection-start="267" selection-end="267" vertical-scroll-proportion="0.45698926" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/hq/database/DataOperation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="38" selection-start="981" selection-end="981" vertical-scroll-proportion="0.4707521" />
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/json-lib-1.1-jdk13.jar!/net/sf/json/JSONArray.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="94" column="28" selection-start="4762" selection-end="4762" vertical-scroll-proportion="0.35628742" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/hq/model/Region.java">
+    <entry file="file://$PROJECT_DIR$/src/com/hq/model/Section.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="5" selection-start="383" selection-end="383" vertical-scroll-proportion="1.0215054" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/hq/config/GlobalField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="15" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0">
+        <state line="14" column="56" selection-start="330" selection-end="330" vertical-scroll-proportion="0.82608694">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/hq/network/Price.java">
+    <entry file="file://$PROJECT_DIR$/src/com/hq/model/Industry.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="374" selection-end="374" vertical-scroll-proportion="0.0">
+        <state line="14" column="57" selection-start="332" selection-end="332" vertical-scroll-proportion="0.56832296">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/hq/database/ConnManagement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="20" selection-start="1092" selection-end="1092" vertical-scroll-proportion="1.5631068">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/hq/config/GlobalField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="15" selection-start="108" selection-end="108" vertical-scroll-proportion="0.17391305">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/json-lib-1.1-jdk13.jar!/net/sf/json/util/JSONTokener.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="0" selection-start="1626" selection-end="1626" vertical-scroll-proportion="-8.72">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2123" column="33" selection-start="83441" selection-end="83441" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/hq/network/GetSortInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="0" selection-start="2207" selection-end="2207" vertical-scroll-proportion="0.56893206">
+        <state line="40" column="13" selection-start="773" selection-end="1193" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/hq/model/Region.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="24" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/hq/model/Price.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="35" selection-start="965" selection-end="965" vertical-scroll-proportion="0.096273296">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/hq/network/GetCompany.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="35" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#955#964#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/hq/network/GetPrice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="42" selection-start="3317" selection-end="3317" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/hq/model/Company.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="0" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/hq/database/DataOperation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="348" column="46" selection-start="12750" selection-end="12750" vertical-scroll-proportion="-1.2750809">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4220#4228#0" expanded="true" />
+            <element signature="e#6456#6466#0" expanded="true" />
+            <element signature="e#8972#8981#0" expanded="true" />
+            <element signature="e#12798#12807#0" expanded="true" />
           </folding>
         </state>
       </provider>

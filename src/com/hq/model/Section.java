@@ -12,6 +12,12 @@ public class Section {
     private String name;
     private String urlTag;
 
+    public Section(int id, String name, String urlTag) {
+        this.id = id;
+        this.name = name;
+        this.urlTag = urlTag;
+    }
+
     public int getId() {
         return id;
     }

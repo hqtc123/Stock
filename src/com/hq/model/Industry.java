@@ -12,6 +12,12 @@ public class Industry {
     private String name;
     private String urlTag;
 
+    public Industry(int id, String name, String urlTag) {
+        this.id = id;
+        this.name = name;
+        this.urlTag = urlTag;
+    }
+
     public int getId() {
         return id;
     }
