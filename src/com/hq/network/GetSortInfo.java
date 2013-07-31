@@ -114,8 +114,8 @@ public class GetSortInfo {
         operation.addIndustry(industry);
     }
 
-    public static void main(String[] args) {
-        GetSortInfo info = new GetSortInfo();
-        info.deal();
-    }
+//    public static void main(String[] args) {
+//        GetSortInfo info = new GetSortInfo();
+//        info.deal();
+//    }
 }

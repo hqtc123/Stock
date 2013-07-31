@@ -154,10 +154,10 @@ public class GetCompany {
     }
     public static void main(String args[]) {
         GetCompany company = new GetCompany();
-        try {
-            company.setSectionCompany();
-        } catch (IOException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
+//        try {
+//            company.setSectionCompany();
+//        } catch (IOException e) {
+//            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+//        }
     }
 }

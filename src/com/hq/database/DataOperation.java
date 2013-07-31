@@ -130,11 +130,11 @@ public class DataOperation {
             ResultSet rs = preState.executeQuery();
             int count = 0;
             while (rs.next()) {
-                Region region=null;
-                int id=rs.getInt("region_id");
-                String name=rs.getString("region_name");
-                String urlTag=rs.getString("url_tag");
-                region=new Region(id,name,urlTag);
+                Region region = null;
+                int id = rs.getInt("region_id");
+                String name = rs.getString("region_name");
+                String urlTag = rs.getString("url_tag");
+                region = new Region(id, name, urlTag);
                 list.add(region);
                 count++;
             }
@@ -148,7 +148,7 @@ public class DataOperation {
         return list;
     }
 
-    public void addRegionCompany(Company company){
+    public void addRegionCompany(Company company) {
         Connection conn = null;
         PreparedStatement preState;
         try {
@@ -170,7 +170,7 @@ public class DataOperation {
                     "region_id)VALUES (?,?,?)");
             preState.setString(1, company.getName());
             preState.setString(2, company.getNumStr());
-            preState.setInt(3,company.getRegionId());
+            preState.setInt(3, company.getRegionId());
             preState.executeUpdate();
 
             System.out.println("insert company " + company.getName());
@@ -192,11 +192,11 @@ public class DataOperation {
             ResultSet rs = preState.executeQuery();
             int count = 0;
             while (rs.next()) {
-                Industry industry=null;
-                int id=rs.getInt("industry_id");
-                String name=rs.getString("industry_name");
-                String urlTag=rs.getString("url_tag");
-                industry=new Industry(id,name,urlTag);
+                Industry industry = null;
+                int id = rs.getInt("industry_id");
+                String name = rs.getString("industry_name");
+                String urlTag = rs.getString("url_tag");
+                industry = new Industry(id, name, urlTag);
                 list.add(industry);
                 count++;
             }
@@ -210,7 +210,7 @@ public class DataOperation {
         return list;
     }
 
-    public void addIndustryCompany(Company company){
+    public void addIndustryCompany(Company company) {
         Connection conn = null;
         PreparedStatement preState;
         try {
@@ -236,7 +236,7 @@ public class DataOperation {
                     "industry_id)VALUES (?,?,?)");
             preState.setString(1, company.getName());
             preState.setString(2, company.getNumStr());
-            preState.setInt(3,company.getIndustryId());
+            preState.setInt(3, company.getIndustryId());
             preState.executeUpdate();
 
             System.out.println("insert company industry" + company.getName());
@@ -258,11 +258,11 @@ public class DataOperation {
             ResultSet rs = preState.executeQuery();
             int count = 0;
             while (rs.next()) {
-                Section section=null;
-                int id=rs.getInt("section_id");
-                String name=rs.getString("section_name");
-                String urlTag=rs.getString("url_tag");
-                section=new Section(id,name,urlTag);
+                Section section = null;
+                int id = rs.getInt("section_id");
+                String name = rs.getString("section_name");
+                String urlTag = rs.getString("url_tag");
+                section = new Section(id, name, urlTag);
                 list.add(section);
                 count++;
             }
@@ -276,7 +276,7 @@ public class DataOperation {
         return list;
     }
 
-    public void addSectionCompany(Company company){
+    public void addSectionCompany(Company company) {
         Connection conn = null;
         PreparedStatement preState;
         try {
@@ -302,7 +302,7 @@ public class DataOperation {
                     "section_id)VALUES (?,?,?)");
             preState.setString(1, company.getName());
             preState.setString(2, company.getNumStr());
-            preState.setInt(3,company.getSectionId());
+            preState.setInt(3, company.getSectionId());
             preState.executeUpdate();
 
             System.out.println("insert company section" + company.getName());
@@ -312,7 +312,7 @@ public class DataOperation {
         }
     }
 
-    public void addPrice(Price price){
+    public void addPrice(Price price) {
         Connection conn = null;
         PreparedStatement preState;
         try {
@@ -320,7 +320,7 @@ public class DataOperation {
 
             preState = conn.prepareStatement("SELECT * FROM price WHERE company_id=? AND DATE =?");
             preState.setInt(1, price.getCompanyId());
-            preState.setDate(2,price.getDate());
+            preState.setDate(2, price.getDate());
             ResultSet rs = preState.executeQuery();
             int count = 0;
             while (rs.next()) {
@@ -336,10 +336,10 @@ public class DataOperation {
             preState.setInt(1, price.getCompanyId());
             preState.setDouble(2, price.getClosePrice());
             preState.setDouble(3, price.getOpenPrice());
-            preState.setDate(4,price.getDate());
+            preState.setDate(4, price.getDate());
             preState.executeUpdate();
 
-            System.out.println("insert pirce " + price.getCompanyId()+price.getDate());
+            System.out.println("insert pirce " + price.getCompanyId() + price.getDate());
 
         } catch (SQLException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
@@ -358,10 +358,10 @@ public class DataOperation {
             ResultSet rs = preState.executeQuery();
             int count = 0;
             while (rs.next()) {
-                Company company=null;
-                int id=rs.getInt("company_id");
-                String numStr=rs.getString("company_no");
-                company=new Company();
+                Company company = null;
+                int id = rs.getInt("company_id");
+                String numStr = rs.getString("company_no");
+                company = new Company();
                 company.setId(id);
                 company.setNumStr(numStr);
                 list.add(company);
@@ -375,5 +375,95 @@ public class DataOperation {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
         return list;
+    }
+
+    public void addCompanySix(int companyId) {
+        Connection conn = null;
+        PreparedStatement preStatement = null;
+        try {
+            conn = connManagement.getConn();
+            preStatement = conn.prepareStatement("SELECT * FROM company_six WHERE company_id=?");
+            preStatement.setInt(1, companyId);
+            ResultSet rs = preStatement.executeQuery();
+            int count = 0;
+            while (rs.next()) {
+                count++;
+            }
+            if (count != 0) {
+                System.out.println("Already a data with same company_id in database");
+                return;
+            }
+
+            preStatement = conn.prepareStatement("INSERT INTO company_six(company_id) VALUES (?)");
+            preStatement.setInt(1, companyId);
+            preStatement.executeUpdate();
+            System.out.println("data inserted");
+        } catch (SQLException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+    }
+
+    public void updateStockAandAll(String companyNo, double stockAll, double stockA) {
+        Connection conn = null;
+        PreparedStatement preStatement = null;
+        try {
+            conn = connManagement.getConn();
+            preStatement = conn.prepareStatement("SELECT company_id FROM company WHERE company_no=?");
+            preStatement.setString(1, companyNo);
+            ResultSet rs = preStatement.executeQuery();
+            int count = 0;
+            int companyId = 0;
+            while (rs.next()) {
+                companyId = rs.getInt("company_id");
+                count++;
+            }
+            if (count == 0) {
+                System.out.println("no such company in database , please check carefully");
+                return;
+            }
+            preStatement = conn.prepareStatement("UPDATE company_six SET stock_all=?,stock_A=? WHERE " +
+                    "company_id=?");
+            preStatement.setDouble(1, stockAll);
+            preStatement.setDouble(2, stockA);
+            preStatement.setInt(3, companyId);
+            preStatement.executeUpdate();
+            System.out.println("update  succcess");
+        } catch (SQLException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+    }
+
+    public void updateDebt(int companyId, double currentDebt, double longDebt, double bossProfit) {
+        Connection conn = null;
+        PreparedStatement preStatement = null;
+        try {
+            conn = connManagement.getConn();
+            preStatement = conn.prepareStatement("UPDATE company_six SET current_debt=?,long_debt=?,boss_profit=? WHERE " +
+                    "company_id=?");
+            preStatement.setDouble(1, currentDebt);
+            preStatement.setDouble(2, longDebt);
+            preStatement.setDouble(3, bossProfit);
+            preStatement.setInt(4, companyId);
+            preStatement.executeUpdate();
+            System.out.println("update  succcess");
+        } catch (SQLException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+    }
+
+    public void updatePerValue(int companyId, double perValue) {
+        Connection conn = null;
+        PreparedStatement preStatement = null;
+        try {
+            conn = connManagement.getConn();
+            preStatement = conn.prepareStatement("UPDATE company_six SET per_value=? WHERE " +
+                    "company_id=?");
+            preStatement.setDouble(1, perValue);
+            preStatement.setInt(2, companyId);
+            preStatement.executeUpdate();
+            System.out.println("update  succcess");
+        } catch (SQLException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
     }
 }
