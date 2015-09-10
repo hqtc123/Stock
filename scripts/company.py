@@ -30,8 +30,6 @@ def insert_companies(company_dict_list):
         conn = MySQLConnection(**db_config)
         cursor = conn.cursor()
 
-
-
         for company_dict in company_dict_list:
             query_sql = "insert into company(market_type, code, name) VALUES (%s,%s,%s)"
             args = (company_dict["market_type"], company_dict["code"], company_dict["name"])
