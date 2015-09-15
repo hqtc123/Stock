@@ -1,14 +1,14 @@
 __author__ = 'Qing'
 import urllib
 import urllib.request
-from company import insert_companies
+from model import Company
 
 SHANGHAI = {"market_type": 1, "page_count": 20}
 SHENZHEN = {"market_type": 2, "page_count": 30}
 
 PAGE_SIZE = 50
 
-company_dict_list = []
+company_list = []
 market = [SHENZHEN, SHANGHAI]
 
 for market in market:
@@ -26,8 +26,7 @@ for market in market:
             for i in range(0, length - 2):
                 stock_str = stock_list[i].split('[')[1]
                 stock_item_list = stock_str.split(',')
-                company_dict_list.append(
-                    {"market_type": market["market_type"], "code": stock_item_list[0][1:-1],
-                     "name": stock_item_list[1][1:-1]})
+                company_list.append({"market_type": market["market_type"], "code": stock_item_list[0][1:-1],
+                                     "name": stock_item_list[1][1:-1]})
 
-insert_companies(company_dict_list)
+Company.insert_many(company_list).execute()
