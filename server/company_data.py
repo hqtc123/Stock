@@ -1,7 +1,8 @@
 __author__ = 'Qing'
 import urllib
 import urllib.request
-from model import Company
+
+from server.model import Company
 
 SHANGHAI = {"market_type": 1, "page_count": 20}
 SHENZHEN = {"market_type": 2, "page_count": 30}

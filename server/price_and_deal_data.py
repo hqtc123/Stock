@@ -1,10 +1,11 @@
 __author__ = 'Qing'
 import urllib
 import urllib.request
-from model import Price
-from model import DealInfo
 from datetime import date
 import uuid
+
+from server.model import Price
+from server.model import DealInfo
 
 SHANGHAI = {"market_type": 1, "page_count": 20}
 SHENZHEN = {"market_type": 2, "page_count": 30}
