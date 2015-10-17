@@ -16,6 +16,26 @@ price_list = []
 deal_info_list = []
 market = [SHENZHEN, SHANGHAI]
 
+base_url = "http://hq.sinajs.cn/list="
+
+sh_url = base_url + "sh000001"
+sz_url = base_url + "sz399001"
+cyb_url = base_url + "sz399006"
+
+sh_price_str = urllib.request.urlopen(sh_url).read().decode("gbk")
+sz_price_str = urllib.request.urlopen(sz_url).read().decode("gbk")
+cyb_price_str = urllib.request.urlopen(cyb_url).read().decode("gbk")
+
+sh_arr = sh_price_str.split("=")[1].split(",")
+sz_arr = sz_price_str.split("=")[1].split(",")
+cyb_arr = cyb_price_str.split("=")[1].split(",")
+
+for index, arr in enumerate([sh_arr, sz_arr, cyb_arr]):
+    print(index)
+
+exit()
+
+# get price and deal data from hexun.com
 for market in market:
     for page in range(1, market["page_count"] + 1):
         url = 'http://quote.tool.hexun.com/hqzx/quote.aspx?market=' + str(
