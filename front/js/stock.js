@@ -5,14 +5,18 @@ var GlobalVarialbles = {
     serverUrl: "http://127.0.0.1:5000/"
 };
 
-var app = angular.module("StockApp", ["view.company", 'ngRoute']);
+var app = angular.module("StockApp", ["view.company", "view.index", "ngRoute", "HTTPUtilModule"]);
 
-var httpUtil = angular.module("HTTPUtil", []).config([
+app.config(["$routeProvider", function ($routeProvider) {
+    $routeProvider.otherwise({redirectTo: "/index/"})
+}]);
+
+var HTTPUtilModule = angular.module("HTTPUtilModule", []).config([
     "$httpProvider", function ($httpProvider) {
         $httpProvider.defaults.withCredentials = true;
         $httpProvider.defaults.timeout = 2000;
     }
-]).factory("stockHttp", ["$http", "$rootScope", "$q", function ($http, $rootScope, $q) {
+]).factory("httpUtil", ["$http", "$rootScope", "$q", function ($http, $rootScope, $q) {
     var networkErrorCode = 999999;
     var timeoutDefer = $q.defer();
 
