@@ -1,7 +1,7 @@
 __author__ = 'Qing'
 from peewee import *
 
-database = MySQLDatabase("stock", host="203.195.140.52", port=3306, user="root", passwd="qwerty")
+database = MySQLDatabase("stock", host="127.0.0.1", port=3306, user="root", passwd="qwerty")
 
 
 class BaseModel(Model):
