@@ -10,13 +10,13 @@ CORS(app, supports_credentials=True)
 
 @app.route("/companies", methods=["POST", "GET"])
 def companies():
-    companies_dict = Company.select().paginate(1, 10).dicts()
-    data_list = []
-    for item in companies_dict:
-        data_list.append(item)
+    # companies_dict = Company.select().paginate(1, 10).dicts()
+    # data_list = []
+    # for item in companies_dict:
+    #     data_list.append(item)
     rs_dict = {
         "code": 0,
-        "data": data_list
+        "data": ""
     }
     return flask.jsonify(rs_dict)
 
