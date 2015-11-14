@@ -1,9 +1,11 @@
 __author__ = 'Qing'
 import flask
 from flask import Flask
+from flask.ext.cors import CORS
 from model import Company
 
 app = Flask(__name__)
+CORS(app, supports_credentials=True)
 
 
 @app.route("/companies", methods=["POST", "GET"])
@@ -17,15 +19,6 @@ def companies():
         "data": data_list
     }
     return flask.jsonify(rs_dict)
-
-
-@app.after_request
-def after_request(response):
-    response.headers.add('Access-Control-Allow-Origin', 'http://localhost:63342')
-    response.headers.add('Access-Control-Allow-Credentials', "true")
-    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
-    return response
-
 
 if __name__ == "__main__":
     app.run(debug=True)
