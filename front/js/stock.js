@@ -2,7 +2,7 @@
  * Created by Qing on 2015/9/19.
  */
 var GlobalVarialbles = {
-    serverUrl: "http://127.0.0.1:5000/"
+    serverUrl: "http://hqdo.net:5000/"
 };
 
 var app = angular.module("StockApp", ["view.company", "view.index", "ngRoute", "HTTPUtilModule"]);
