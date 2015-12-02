@@ -4,6 +4,6 @@
 var indexModule = angular.module("view.index", ["ngRoute"])
     .config(["$routeProvider", function ($routeProvider) {
         $routeProvider.when("/index/", {
-            templateUrl: "templates/index.html"
+            templateUrl: "/static/templates/index.html"
         })
     }]);
