@@ -1,9 +1,8 @@
-<div ng-controller="companyCtrl">
-    <h1>hahahah</h1>
+<div id="companies-page" ng-controller="companyCtrl">
     <span>{{welcome}}</span>
 
     <div ng-repeat="company in companies">
-        code <span>{{company.code}}</span>
-        name <span>{{company.name}}</span>
+        code <span class="code-span">{{company.code}}</span>
+        name <span class="name-span">{{company.name}}</span>
     </div>
 </div>

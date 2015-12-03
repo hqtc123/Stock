@@ -13,7 +13,7 @@ db_instance = Db()
 @app.route("/index")
 @app.route("/about")
 def basic_pages(**kwargs):
-    return make_response(open("index.html").read())
+    return make_response(open("index.html", 'rb').read())
 
 
 @app.route("/companies", methods=["POST", "GET"])

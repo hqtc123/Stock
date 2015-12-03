@@ -7,7 +7,7 @@ var company = angular.module("view.company", ["ngRoute"])
             templateUrl: "/static/templates/companies.html"
         })
     }]).controller("companyCtrl", ["$scope", "$routeParams", "httpUtil", function ($scope, $routeParams, httpUtil) {
-        $scope.welcome = "hello wa";
+        $scope.welcome = "hello , you are welcome";
         $scope.code = $routeParams.code;
         $scope.companies = {};
 
