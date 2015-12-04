@@ -3,7 +3,7 @@ from playhouse.pool import PooledMySQLDatabase
 
 
 class Db:
-    database = PooledMySQLDatabase("stock", host="203.195.140.52", port=3306, user="root", passwd="qwerty")
+    database = PooledMySQLDatabase("stock", host="115.159.94.119", port=3306, user="root", passwd="qwerty")
 
     def __new__(cls, *args, **kwargs):
         if "_instance" not in vars(cls):
