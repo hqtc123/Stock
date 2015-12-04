@@ -1,7 +1,9 @@
 __author__ = 'Qing'
 import urllib
 import urllib.request
-
+import sys
+sys.path.append("..")
+print(sys.path)
 from model import Company
 
 SHANGHAI = {"market_type": 1, "page_count": 20}
