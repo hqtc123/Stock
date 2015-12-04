@@ -2,7 +2,7 @@ __author__ = 'Qing'
 import urllib
 import urllib.request
 
-from server.model import Company
+from model import Company
 
 SHANGHAI = {"market_type": 1, "page_count": 20}
 SHENZHEN = {"market_type": 2, "page_count": 30}
@@ -30,4 +30,4 @@ for market in market:
                 company_list.append({"market_type": market["market_type"], "code": stock_item_list[0][1:-1],
                                      "name": stock_item_list[1][1:-1]})
 
-Company.insert_many(company_list).execute()
+# Company.insert_many(company_list).execute()
