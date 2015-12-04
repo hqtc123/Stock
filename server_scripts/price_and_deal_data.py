@@ -3,7 +3,8 @@ import urllib
 import urllib.request
 from datetime import date
 import uuid
-
+import sys
+sys.path.append("..")
 from model import Price
 from model import DealInfo
 
@@ -15,30 +16,6 @@ PAGE_SIZE = 50
 price_list = []
 deal_info_list = []
 market = [SHENZHEN, SHANGHAI]
-
-base_url = "http://hq.sinajs.cn/list="
-
-index_code_arr = ["sh000001", "sz399001", "sz399006"]
-
-for code in index_code_arr:
-    url = base_url + code
-    change_url =
-    data_arr = urllib.request.urlopen(url).read().decode("gbk").split("=")[1].split(",")
-    price_dict = {
-        "id": uuid.uuid4(),
-        "code": code,
-        "now": data_arr[3],
-        "diff_percentage": stock_item_list[3],
-        "last_finish": stock_item_list[4],
-        "start": stock_item_list[5],
-        "highest": stock_item_list[6],
-        "lowest": stock_item_list[7],
-        "date": date.today()
-    }
-
-    print(data)
-
-exit()
 
 # get price and deal data from hexun.com
 for market in market:
