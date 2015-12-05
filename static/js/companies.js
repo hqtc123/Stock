@@ -1,14 +1,12 @@
 /**
  * Created by Qing on 2015/9/19.
  */
-var company = angular.module("view.company", ["ngRoute"])
+angular.module("view.companies", ["ngRoute"])
     .config(["$routeProvider", function ($routeProvider) {
         $routeProvider.when("/companies", {
             templateUrl: "/static/templates/companies.html"
         })
-    }]).controller("companyCtrl", ["$scope", "$routeParams", "httpUtil", function ($scope, $routeParams, httpUtil) {
-        $scope.welcome = "hello , you are welcome";
-        $scope.code = $routeParams.code;
+    }]).controller("companiesCtrl", ["$scope", "$routeParams", "httpUtil", function ($scope, $routeParams, httpUtil) {
         $scope.companies = {};
 
         httpUtil.post("companies", function (code, data) {

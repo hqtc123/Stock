@@ -1,8 +1,10 @@
-<div id="companies-page" ng-controller="companyCtrl">
+<div id="companies-page" ng-controller="companiesCtrl">
     <span>{{welcome}}</span>
 
     <div ng-repeat="company in companies">
         code <span class="code-span">{{company.code}}</span>
         name <span class="name-span">{{company.name}}</span>
+
+        <a href="#/company/{{company.code}}" class="chart-link">详情</a>
     </div>
 </div>

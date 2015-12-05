@@ -20,6 +20,20 @@ body {
   text-align: left;
   font-size: 30px;
 }
+#header #header-container a {
+  color: #ddd;
+  text-decoration: none;
+}
+#header #header-container a:hover,
+#header #header-container a:active {
+  text-decoration: none;
+}
+#header #header-container #right-div {
+  float: right;
+}
+#header #header-container #right-div a {
+  font-size: 18px;
+}
 #footer {
   width: 100%;
   position: absolute;

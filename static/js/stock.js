@@ -5,7 +5,7 @@ var GlobalVarialbles = {
     serverUrl: ""
 };
 
-var app = angular.module("StockApp", ["view.company", "view.index", "ngRoute", "HTTPUtilModule"]);
+var app = angular.module("StockApp", ["view.companies", "view.about", "view.company", "view.index", "ngRoute", "HTTPUtilModule"]);
 
 app.config(["$routeProvider", function ($routeProvider) {
     $routeProvider.otherwise({redirectTo: "/index/"})
