@@ -21,12 +21,12 @@ class Company(BaseModel):
 class Price(BaseModel):
     id = CharField(primary_key=True)
     code = CharField()
-    now = FloatField()
-    diff_percentage = FloatField()
-    last_finish = FloatField()
-    start = FloatField()
-    highest = FloatField()
-    lowest = FloatField()
+    now = DoubleField()
+    diff_percentage = DoubleField()
+    last_finish = DoubleField()
+    start = DoubleField()
+    highest = DoubleField()
+    lowest = DoubleField()
     date = DateField()
 
 
@@ -36,7 +36,7 @@ class DealInfo(BaseModel):
 
     id = CharField(primary_key=True)
     code = CharField()
-    num = FloatField()
-    money = FloatField()
-    ratio = FloatField()
+    num = DoubleField()
+    money = DoubleField()
+    ratio = DoubleField()
     date = DateField()
