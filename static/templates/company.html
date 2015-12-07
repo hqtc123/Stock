@@ -1,3 +1,10 @@
 <div class="company-page" ng-controller="companyCtrl">
     代码 <span>{{code}}</span>
+
+    <div ng-repeat="price in prices">
+        日期 <span>{{price.date}}</span>
+        当前 <span>{{price.now}}</span>
+        昨收 <span>{{price.last_finish}}</span>
+        今开 <span>{{price.start}}</span>
+    </div>
 </div>
