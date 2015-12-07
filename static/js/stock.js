@@ -13,15 +13,12 @@ var HTTPUtilModule = angular.module("HTTPUtilModule", []).config([
         $httpProvider.defaults.withCredentials = true;
         $httpProvider.defaults.timeout = 2000;
     }
-]).factory("httpUtil", ["$http", "$rootScope", "$q", function ($http, $rootScope, $q) {
+]).factory("httpUtil", ["$http", "$rootScope", function ($http, $rootScope) {
     var networkErrorCode = 999999;
-    var timeoutDefer = $q.defer();
-
     var _http = function (type, url, data, callback, async) {
         var networkError = false;
         setTimeout(function () {
             networkError = true;
-            timeoutDefer.resolve();
         }, 5000);
 
         if (async == undefined)
@@ -32,18 +29,19 @@ var HTTPUtilModule = angular.module("HTTPUtilModule", []).config([
             method: type,
             data: data,
             async: async,
-            timeout: timeoutDefer.promise,
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }).success(function (data) {
             if (_.isFunction(callback)) {
                 callback(data.code, data.data);
+                console.log(type + " " + url + " success ");
             }
-        }).error(function (data, status) {
+        }).catch(function (data, status) {
             if (_.isFunction(callback)) {
+                console.log(type + " " + url + " error , data " + data + ", status " + status + "   ff  " + data.statusText);
                 if (networkError)
                     callback(networkErrorCode, "network_error");
                 else
-                    callback(data.code, data.data);
+                    console.log(data)
             }
             console.log("Visit " + url + " error");
         })
