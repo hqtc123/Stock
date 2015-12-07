@@ -3,7 +3,8 @@
  */
 app.controller("companiesCtrl", ["$scope", "$routeParams", "httpUtil", function ($scope, $routeParams, httpUtil) {
     $scope.companies = {};
-    httpUtil.post("api/companies", function (code, data) {
+    $scope.page = 1;
+    httpUtil.post("api/companies/" + $scope.page, function (code, data) {
         if (code == 0) {
             $scope.companies = data;
         }

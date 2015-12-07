@@ -1,9 +1,21 @@
-#companies-page #companies-table {
+#companies-page {
+  width: 1000px;
   margin: 0 auto;
+  padding-top: 30px;
 }
-#companies-page #companies-table td,
-#companies-page #companies-table th {
-  font-size: 22px;
+#companies-page #left-div {
+  float: left;
+  min-width: 660px;
+}
+#companies-page #left-div #companies-table td,
+#companies-page #left-div #companies-table th {
+  font-size: 18px;
   color: #204d74;
-  padding: 5px;
+  padding: 2px 12px;
+}
+#companies-page #right-div {
+  float: right;
+}
+#companies-page #right-div #search-input {
+  height: 32px;
 }

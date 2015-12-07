@@ -1,14 +1,32 @@
 <div id="companies-page" ng-controller="companiesCtrl">
-    <table id="companies-table">
-        <tr>
-            <th>代码</th>
-            <th>名称</th>
-            <th></th>
-        </tr>
-        <tr ng-repeat="company in companies">
-            <td>{{company.code}}</td>
-            <td>{{company.name}}</td>
-            <td><a href="#/company/{{company.code}}" class="chart-link">详情</a></td>
-        </tr>
-    </table>
+
+    <div id="left-div">
+        <table border="1" id="companies-table">
+            <tr>
+                <th>代码</th>
+                <th>名称</th>
+                <th>当前</th>
+                <th>今开</th>
+                <th>昨收</th>
+                <th>涨幅</th>
+                <th>更新日期</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="company in companies">
+                <td>{{company.code}}</td>
+                <td>{{company.name}}</td>
+                <td>{{company.price.now}}</td>
+                <td>{{company.price.start}}</td>
+                <td>{{company.price.last_finish}}</td>
+                <td>{{company.price.diff_percentage}}</td>
+                <td>{{company.price.date}}</td>
+                <td><a href="#/company/{{company.code}}" class="chart-link">趋势</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="right-div">
+        <input id="search-input" type="text">
+        <button class="btn btn-primary">搜索</button>
+    </div>
 </div>
