@@ -6,6 +6,7 @@ import uuid
 import sys
 
 sys.path.append("..")
+
 from model import Price
 from model import DealInfo
 
