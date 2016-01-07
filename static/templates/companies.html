@@ -1,0 +1,46 @@
+<div id="companies-page" ng-controller="companiesCtrl">
+
+    <div id="left-div">
+        <table border="1" id="companies-table">
+            <tr>
+                <th>代码</th>
+                <th>名称</th>
+                <th>当前</th>
+                <th>今开</th>
+                <th>昨收</th>
+                <th>涨幅</th>
+                <th>更新日期</th>
+                <th></th>
+            </tr>
+
+            <tr ng-repeat="company in companies">
+                <td>{{ company.code }}</td>
+                <td>{{ company.name }}</td>
+                <td>{{ company.price.now }}</td>
+                <td>{{ company.price.start }}</td>
+                <td>{{ company.price.last_finish }}</td>
+                <td>{{ company.price.diff_percentage }}</td>
+                <td>{{ company.price.date }}</td>
+                <td><a href="#/company/{{ company.code }}" class="chart-link">趋势</a></td>
+            </tr>
+        </table>
+        <img id="loading-img" ng-show="loading" src="static/img/loading.gif" alt="">
+        <uib-pagination ng-show="!loading" total-items="totalItems" items-per-page=20 ng-model="currentPage"
+                        ng-change="refreshCompanies()" boundary-links="true" total-items="totalItems"
+                        class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;"
+                        last-text="&raquo;" max-size="8"></uib-pagination>
+    </div>
+
+    <div id="right-div">
+        <div id="search-div">
+            <input id="search-input" ng-model="keyword" ng-change="callSearch()" type="text">
+            <button class="btn btn-primary">搜索</button>
+
+            <ul id="result-ul">
+                <li ng-repeat="item in resultList" ng-click="selectCompany(item.code)">
+                    {{ item.code }} &nbsp;&nbsp; {{ item.name }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

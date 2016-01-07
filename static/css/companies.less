@@ -1,0 +1,43 @@
+@content-width: 900px;
+
+#companies-page {
+  width: @content-width;
+  margin: 0 auto;
+  padding-top: 30px;
+  #left-div {
+    float: left;
+    min-width: 660px;
+    #companies-table {
+      td, th {
+        font-size: 14px;
+        color: #204d74;
+        padding: 0 12px;
+      }
+
+    }
+    #loading-img {
+      margin: 20px auto;
+    }
+  }
+
+  #right-div {
+    float: right;
+    #search-div {
+      #search-input {
+        height: 35px;
+      }
+      #result-ul {
+        border: 1px solid #ccc;
+        background: #fdfdfd;
+        margin-right: 58px;
+        li {
+          padding: 1px 0;
+          cursor: pointer;
+        }
+        li:hover {
+          background: #dcecec;
+        }
+      }
+    }
+  }
+}
