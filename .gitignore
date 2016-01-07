@@ -1,5 +1,7 @@
 *.iml
 
-.idea/
+.idea/*
 
-server_scripts/*
+*.pyc
+
+db_config.py
