@@ -1,4 +1,5 @@
 flask
 peewee
 PyMySQL
+sqlalchemy
 uwsgi
