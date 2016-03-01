@@ -3,3 +3,4 @@ peewee
 PyMySQL
 sqlalchemy
 uwsgi
+pymongo

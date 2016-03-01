@@ -146,7 +146,7 @@ def search_allusion(keyword, interval):
         "count": 0
     }
 
-    interval = int(interval)
+    interval = -1 if len(interval) == 0 else int(interval)
     keyword = keyword.replace(" ", "+")
     # 搜索两个典面
     if "+" in keyword:
