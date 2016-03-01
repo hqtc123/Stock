@@ -194,6 +194,9 @@ def search_allusion(keyword, interval):
 
     for poem in poem_list:
         poem_doc = poem_collection.find_one({"_id": poem["poem_id"]})
+        if poem_doc is None:
+            rs_dict["data"]["poems"].append(str(poem["poem_id"]))
+            continue
         if len(keyword) > 3:
             if keyword not in poem_doc["content_arr"][int(poem["sentence_index"])]:
                 continue
