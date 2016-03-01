@@ -1,0 +1,14 @@
+.poems-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.poems-content .poem-item {
+    margin: 20px auto;
+    border-bottom: 2px gray solid;
+}
+
+.poems-content .poem-item .label {
+    color: darkred;
+    margin-left: 32px;
+}
