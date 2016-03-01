@@ -142,8 +142,7 @@ def search_allusion(keyword, interval):
     poem_collection = db["ts_co2"]
     rs_dict = {
         "code": 0,
-        "data": "not found",
-        "count": 0
+        "data": {"msg": "not found", "count": 0}
     }
 
     interval = -1 if len(interval) == 0 else int(interval)
