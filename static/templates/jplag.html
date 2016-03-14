@@ -13,22 +13,7 @@
     </nav>
 
     <div class="row">
-        <form role="form" class="col-md-8 col-md-offset-2">
-
-            <div class="form-group">
-                <label for="inputfile">代码文件*</label>
-                <input type="file" class="form-control" id="inputfile">
-
-                <p class="help-block">选择zip格式的打包后的代码。</p>
-            </div>
-
-            <div class="form-group">
-                <label for="basefile">base代码</label>
-                <input type="file" class="form-control" id="basefile">
-
-                <p class="help-block">选择zip格式的打包后的base代码。该代码将在查重中忽略。</p>
-            </div>
-
+        <div role="form" class="col-md-8 col-md-offset-2">
             <div class="form-group">
                 <label for="language">语言</label>
                 <select class="form-control" id="language">
@@ -37,33 +22,39 @@
                     <option>Java 1.7</option>
                 </select>
             </div>
-
             <div class="form-group">
                 <label for="name">Token</label>
-                <input type="text" class="form-control" id="name" value="5">
+                <input type="text" class="form-control" id="name" ng-model="token">
 
                 <p class="help-block">请输入整数，数值越小，比对越敏感。</p>
             </div>
 
-            <button type="submit" class="btn btn-default pull-right">提交</button>
-        </form>
+            <div class="form-group">
+                <label for="code-file">代码文件*</label>
 
-    </div>
-    <div ng-controller="jplagCtrl" name="form">
-        <h4>Upload on file select</h4>
-        <button type="file" ngf-select="uploadFiles($file, $invalidFiles)"
-                ngf-max-height="1000" ngf-max-size="1MB">
-            Select File
-        </button>
-        <br><br>
-        File:
-        <div>{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
-            <span class="progress" ng-show="f.progress >= 0">
-                <div style="width:{{f.progress}}%"
-                     ng-bind="f.progress + '%'">
-                </div>
-            </span>
+                <form method=post enctype=multipart/form-data>
+                    <input class="form-control" id="code-file" type=file name=file ng-model="fileInput">
+                    <br>
+                    <input type="button" class=" btn btn-default" value="上传" ng-click="uploadCode('code-file')">
+
+                    <p class="help-block">{{codeTip}}</p>
+                </form>
+            </div>
+
+            <div class="form-group">
+                <label for="code-file">Base文件*</label>
+
+                <form method=post enctype=multipart/form-data>
+                    <input class="form-control" id="base-file" type=file name=file>
+                    <br>
+                    <input type="button" class=" btn btn-default" value="上传" ng-click="uploadCode('base-file')">
+
+                    <p class="help-block">{{baseTip}}</p>
+                </form>
+            </div>
+
+            <button class="btn btn-default pull-right" ng-click="runCheck()">开始查重</button>
         </div>
-        {{errorMsg}}
+
     </div>
 </div>

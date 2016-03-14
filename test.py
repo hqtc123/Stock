@@ -1,30 +1,37 @@
-# 对方法进行配置
-def make_addr(addend):
-    def adder(augend):
-        return augend + addend
+import os
+from flask import Flask, request, redirect, url_for
 
-    return adder
+UPLOAD_FOLDER = 'C:\\upload'
+ALLOWED_EXTENSIONS = set(['txt', 'zip'])
 
-
-p = make_addr(23)
-q = make_addr(44)
-
-print(p(100))
-print(q(100))
+app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
-def hellocounter(name):
-    count = 0
-
-    def counter():
-        nonlocal count
-        count += 1
-        print("hello," + name + "," + str(count) + "access !")
-    return counter
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
 
 
-hello = hellocounter("A Hqdo")
+@app.route("/", methods=['GET', 'POST'])
+def index():
+    if request.method == 'POST':
+        file = request.files['file']
+        if file and allowed_file(file.filename):
+            filename = file.filename
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            return "上传成功"
+    return """
+    <!doctype html>
+    <title>Upload new File</title>
+    <h1>Upload new File</h1>
+    <form action="" method=post enctype=multipart/form-data>
+      <p><input type=file name=file>
+         <input type=submit value=Upload>
+    </form>
+    <p>%s</p>
+    """ % "<br>".join(os.listdir(app.config['UPLOAD_FOLDER'], ))
 
-hello()
-hello()
-hello()
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5001, debug=True)

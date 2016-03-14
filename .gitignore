@@ -4,4 +4,4 @@
 
 *.pyc
 
-db_config.py
+app_config.py

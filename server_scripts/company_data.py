@@ -8,9 +8,9 @@ import sys
 
 sys.path.append("/home/hqdo/Stock")
 from model import CompanyEntity
-import db_config
+import app_config
 
-engine = create_engine(db_config.MYSQL_URI, pool_recycle=3600)
+engine = create_engine(app_config.MYSQL_URI, pool_recycle=3600)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 

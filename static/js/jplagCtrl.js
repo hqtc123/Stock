@@ -1,7 +1,14 @@
 /**
  * Created by Qing on 2016/3/14.
  */
-app.controller("jplagCtrl", ["$scope", "Upload", "httpUtil", "$location", function ($scope, Upload, httpUtil, $location) {
+app.controller("jplagCtrl", ["$scope", "Upload", "httpUtil", "$location", "$http", function ($scope, Upload, httpUtil, $location, $http) {
+    $scope.token = 5;
+    $scope.codeTip = "选择zip格式的打包后的代码。";
+    $scope.baseTip = "选择zip格式的打包后的Base代码,Base代码将会在查重时忽略。";
+
+    $scope.codeFileName = "";
+    $scope.baseFileName = "";
+
     $scope.searchAllusion = function () {
         httpUtil.post("api/jplag/search/" + $scope.keyword + "/" + $scope.interval, function (code, data) {
             if (code == 0) {
@@ -12,32 +19,44 @@ app.controller("jplagCtrl", ["$scope", "Upload", "httpUtil", "$location", functi
     };
 
     // upload later on form submit or something similar
-    $scope.submit = function () {
-        if ($scope.form.file.$valid && $scope.file) {
-            $scope.upload($scope.file);
+    $scope.uploadCode = function (inputId) {
+        var codeFile = document.getElementById(inputId).files[0];
+        console.log(codeFile)
+        var formData = new FormData();
+        formData.append("file", codeFile);
+        if (inputId == "code-file") {
+            $scope.codeTip = "上传中。。。";
+        } else {
+            $scope.baseTip = "上传中。。。";
         }
+        $http({
+            method: 'POST',
+            url: 'api/upload',
+            data: formData,
+            headers: {'Content-Type': undefined},
+            transformRequest: angular.identity
+        }).success(function (data, status, headers, config) {
+            if (data.code == 0) {
+                if (inputId == "code-file") {
+                    $scope.codeTip = "上传成功";
+                    $scope.codeFileName = data.data.fileName;
+                } else {
+                    $scope.baseTip = "上传成功";
+                    $scope.baseFileName = data.data.fileName;
+                }
+            } else {
+                if (inputId == "code-file") {
+                    $scope.codeTip = "上传失败！！";
+                } else {
+                    $scope.baseTip = "上传失败！！";
+                }
+            }
+        }).error(function (data, status, headers, config) {
+        });
     };
-     $scope.uploadFiles = function(file, errFiles) {
-        $scope.f = file;
-        $scope.errFile = errFiles && errFiles[0];
-        if (file) {
-            file.upload = Upload.upload({
-                url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
-                data: {file: file}
-            });
 
-            file.upload.then(function (response) {
-                $timeout(function () {
-                    file.result = response.data;
-                });
-            }, function (response) {
-                if (response.status > 0)
-                    $scope.errorMsg = response.status + ': ' + response.data;
-            }, function (evt) {
-                file.progress = Math.min(100, parseInt(100.0 *
-                                         evt.loaded / evt.total));
-            });
-        }
+    $scope.runCheck = function () {
+        console.log($scope.codeFileName)
+        console.log($scope.baseFileName)
     }
-
 }]);

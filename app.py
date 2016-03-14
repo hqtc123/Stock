@@ -1,11 +1,12 @@
 __author__ = 'Qing'
 # -*- coding: UTF-8 -*-
 import flask
-from flask import Flask
+from flask import Flask, request
 from flask import make_response
 import re
+import os
 from model import *
-import db_config
+import app_config
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm.exc import NoResultFound
@@ -14,8 +15,13 @@ from pymongo import MongoClient
 
 app = Flask(__name__)
 
-engine = create_engine(db_config.MYSQL_URI, pool_recycle=3600)
+engine = create_engine(app_config.MYSQL_URI, pool_recycle=3600)
 DBSession = sessionmaker(bind=engine)
+
+ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'zip'])
+
+SERVER_ERR_DICT = {"code": 1, "data": "server error"}
+DEFAULT_RS_DICT = {"code": 0, "data": "success"}
 
 
 @app.route("/")
@@ -208,6 +214,23 @@ def search_allusion(keyword, interval):
         })
     rs_dict["data"]["count"] = len(rs_dict["data"]["poems"])
     return flask.jsonify(rs_dict)
+
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
+
+
+@app.route("/api/upload", methods=['GET', 'POST'])
+def index():
+    if request.method == 'POST':
+        file = request.files['file']
+        if file and allowed_file(file.filename):
+            filename = file.filename
+            file.save(os.path.join(app_config.UPLOAD_FOLDER, filename))
+            rs_dict = DEFAULT_RS_DICT
+            rs_dict["data"] = {"fileName": file.filename}
+            return flask.jsonify(rs_dict)
+    return flask.jsonify(SERVER_ERR_DICT)
 
 
 if __name__ == "__main__":
