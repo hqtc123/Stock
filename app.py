@@ -203,7 +203,7 @@ def search_allusion(keyword, interval):
             "title": poem_doc["title"],
             "author": poem_doc["author"],
             "sentence": poem_doc["content_arr"][int(poem["sentence_index"])],
-            "content": poem_doc["content"],
+            # "content": poem_doc["content"],
             "category": poem_doc["category"]
         })
     rs_dict["data"]["count"] = len(rs_dict["data"]["poems"])
