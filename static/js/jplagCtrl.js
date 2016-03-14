@@ -66,7 +66,9 @@ app.controller("jplagCtrl", ["$scope", "Upload", "httpUtil", "$location", "$http
         };
 
         httpUtil.post("api/jplag/check", params, function (code, data) {
-            console.log(data)
+            if (data.code == 0) {
+                $location.path("http://121.41.58.246:5000/jplag_result")
+            }
         })
     }
 }]);
