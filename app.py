@@ -241,20 +241,21 @@ def upload():
 
 @app.route("/api/jplag/check", methods=["POST"])
 def jplag_check():
-    rs_dict = DEFAULT_RS_DICT
     params = request.get_json()
-    os.system("rm -f /home/hqdo/Stock/upload/code/*")
-    os.system("rm -f /home/hqdo/Stock/upload/base/*")
-    os.system("rm -f /home/hqdo/Stock/jplag_result/*")
-    os.system("unzip /home/hqdo/Stock/upload/" + params["codeFile"] + " -d /home/hqdo/Stock/upload/code")
-    command = "java -jar /home/hqdo/discussClass/jplag-2.11.8.jar -l " + params[
-        "lang"] + " -s /home/hqdo/Stock/upload/code -r /home/hqdo/Stock/jplag_result"
-    if params["baseFile"] != "":
-        os.system("unzip /home/hqdo/Stock/upload/" + params["baseFile"] + " -d /home/hqdo/Stock/upload/base")
-        command += " -bc /home/hqdo/Stock/upload/base"
+    if params["codeFile"] != "":
+        os.system("rm -f /home/hqdo/Stock/upload/code/*")
+        os.system("rm -f /home/hqdo/Stock/upload/base/*")
+        os.system("rm -f /home/hqdo/Stock/jplag_result/*")
+        os.system("unzip /home/hqdo/Stock/upload/" + params["codeFile"] + " -d /home/hqdo/Stock/upload/code")
+        command = "java -jar /home/hqdo/discussClass/jplag-2.11.8.jar -l " + params[
+            "lang"] + " -s /home/hqdo/Stock/upload/code -r /home/hqdo/Stock/jplag_result"
+        if params["baseFile"] != "":
+            os.system("unzip /home/hqdo/Stock/upload/" + params["baseFile"] + " -d /home/hqdo/Stock/upload/base")
+            command += " -bc /home/hqdo/Stock/upload/base"
 
-    os.system(command)
-    return flask.jsonify(rs_dict)
+        os.system(command)
+        return flask.jsonify(DEFAULT_RS_DICT)
+    return flask.jsonify(SERVER_ERR_DICT)
 
 
 if __name__ == "__main__":
