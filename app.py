@@ -245,6 +245,7 @@ def jplag_check():
     params = request.get_json()
     os.system("rm -f /home/hqdo/Stock/upload/code/*")
     os.system("rm -f /home/hqdo/Stock/upload/base/*")
+    os.system("rm -f /home/hqdo/Stock/jplag_result/*")
     os.system("unzip /home/hqdo/Stock/upload/" + params["codeFile"] + " -d /home/hqdo/Stock/upload/code")
     command = "java -jar /home/hqdo/discussClass/jplag-2.11.8.jar -l " + params[
         "lang"] + " -s /home/hqdo/Stock/upload/code -r /home/hqdo/Stock/jplag_result"
