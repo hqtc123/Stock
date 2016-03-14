@@ -29,7 +29,7 @@ var HTTPUtilModule = angular.module("HTTPUtilModule", []).config([
             method: type,
             data: data,
             async: async,
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            headers: {'Content-Type': 'application/json'}
         }).success(function (data) {
             if (_.isFunction(callback)) {
                 callback(data.code, data.data);

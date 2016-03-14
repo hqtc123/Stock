@@ -9,6 +9,8 @@ app.controller("jplagCtrl", ["$scope", "Upload", "httpUtil", "$location", "$http
     $scope.codeFileName = "";
     $scope.baseFileName = "";
 
+    $scope.languages = ["c/c++", "java 1.7", "c# 1.2"];
+    $scope.language = "c/c++";
     $scope.searchAllusion = function () {
         httpUtil.post("api/jplag/search/" + $scope.keyword + "/" + $scope.interval, function (code, data) {
             if (code == 0) {
@@ -56,7 +58,15 @@ app.controller("jplagCtrl", ["$scope", "Upload", "httpUtil", "$location", "$http
     };
 
     $scope.runCheck = function () {
-        console.log($scope.codeFileName)
-        console.log($scope.baseFileName)
+        params = {
+            token: $scope.token,
+            lang: $scope.language,
+            codeFile: $scope.codeFileName,
+            baseFile: $scope.baseFileName
+        };
+
+        httpUtil.post("api/jplag/check", params, function (code, data) {
+            console.log(data)
+        })
     }
 }]);

@@ -16,11 +16,7 @@
         <div role="form" class="col-md-8 col-md-offset-2">
             <div class="form-group">
                 <label for="language">语言</label>
-                <select class="form-control" id="language">
-                    <option>c/c++</option>
-                    <option>c# 1.2</option>
-                    <option>Java 1.7</option>
-                </select>
+                <select class="form-control" id="language" ng-model="language" ng-options="lang for lang in languages"></select>
             </div>
             <div class="form-group">
                 <label for="name">Token</label>

@@ -221,12 +221,13 @@ def search_allusion(keyword, interval):
     return flask.jsonify(rs_dict)
 
 
+# ==========================================代码查重=============
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
 
 
 @app.route("/api/upload", methods=['GET', 'POST'])
-def index():
+def upload():
     if request.method == 'POST':
         file = request.files['file']
         if file and allowed_file(file.filename):
@@ -236,6 +237,23 @@ def index():
             rs_dict["data"] = {"fileName": file.filename}
             return flask.jsonify(rs_dict)
     return flask.jsonify(SERVER_ERR_DICT)
+
+
+@app.route("/api/jplag/check", methods=["POST"])
+def jplag_check():
+    rs_dict = DEFAULT_RS_DICT
+    params = request.get_json()
+    os.system("rm -f /home/hqdo/Stock/upload/code/*")
+    os.system("rm -f /home/hqdo/Stock/upload/base/*")
+    os.system("unzip /home/hqdo/Stock/upload/" + params["codeFile"] + " -d /home/hqdo/Stock/upload/code")
+    command = "java -jar /home/hqdo/discussClass/jplag-2.11.8.jar -l " + params[
+        "lang"] + " -s /home/hqdo/Stock/upload/code -r /home/hqdo/Stock/jplag_result"
+    if params["baseFile"] != "":
+        os.system("unzip /home/hqdo/Stock/upload/" + params["baseFile"] + " -d /home/hqdo/Stock/upload/base")
+        command += " -bc /home/hqdo/Stock/upload/base"
+
+    os.system(command)
+    return flask.jsonify(rs_dict)
 
 
 if __name__ == "__main__":
