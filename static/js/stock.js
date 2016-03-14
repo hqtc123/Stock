@@ -5,7 +5,7 @@ var GlobalVarialbles = {
     serverUrl: ""
 };
 
-var app = angular.module("StockApp", ["ui.bootstrap", "ngRoute", "HTTPUtilModule"]);
+var app = angular.module("StockApp", ["ui.bootstrap", "ngRoute", "HTTPUtilModule","ngFileUpload"]);
 
 
 var HTTPUtilModule = angular.module("HTTPUtilModule", []).config([

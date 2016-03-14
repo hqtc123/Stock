@@ -1,0 +1,7 @@
+#jplag-page label,
+#jplag-page .help-block {
+  float: left;
+}
+#jplag-page .form-group {
+  margin: 50px auto;
+}

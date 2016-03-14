@@ -10,5 +10,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         templateUrl: "/static/templates/company.html"
     }).when("/poem", {
         templateUrl: "/static/templates/poem.html"
+    }).when("/jplag", {
+        templateUrl: "/static/templates/jplag.html"
     }).otherwise({redirectTo: "/companies/"})
 }]);
