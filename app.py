@@ -31,6 +31,11 @@ def basic_pages(**kwargs):
     return make_response(open("index.html", 'rb').read())
 
 
+@app.route("/jplag_result")
+def jplag_result(**kwargs):
+    return make_response(open("jplag_result/index.html", 'rb').read())
+
+
 @app.route("/api/companies/<page>", methods=["POST"])
 def list_companies(page=1):
     session = DBSession()
