@@ -1,0 +1,18 @@
+#allusion-page {
+  padding-top: 36px;
+  padding-left: 36px;
+}
+#allusion-page .left-div {
+  float: left;
+  width: 660px;
+}
+#allusion-page .right-div {
+  float: left;
+  margin-left: 20px;
+}
+#allusion-page .poem-check {
+  float: right;
+  margin-right: 50px;
+  width: 20px;
+  height: 20px;
+}

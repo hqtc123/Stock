@@ -221,6 +221,18 @@ def search_allusion(keyword, interval):
     return flask.jsonify(rs_dict)
 
 
+@app.route("/api/allusion/advice", methods=["POST"])
+def advice_allusion():
+    rs_dict = DEFAULT_RS_DICT
+    client = MongoClient("localhost", 27017)
+    db = client.ts_db
+    rs_arr = []
+    for doc in db.score5.find().sort([("value", -1)]).skip(1).limit(10):
+        rs_arr.append({"_id": doc["_id"], "value": doc["value"]})
+    rs_dict["data"] = rs_arr
+    return flask.jsonify(rs_dict)
+
+
 # ==========================================代码查重=============
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
@@ -236,6 +248,7 @@ def upload():
             rs_dict = DEFAULT_RS_DICT
             rs_dict["data"] = {"fileName": file.filename}
             return flask.jsonify(rs_dict)
+
     return flask.jsonify(SERVER_ERR_DICT)
 
 

@@ -66,6 +66,7 @@ app.controller("jplagCtrl", ["$scope", "Upload", "httpUtil", "$location", "$http
         };
 
         httpUtil.post("api/jplag/check", params, function (code, data) {
+
             if (code == 0) {
                 window.href = "http://121.41.58.246:5000/jplag_result"
             } else {

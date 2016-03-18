@@ -1,37 +1,8 @@
-import os
-from flask import Flask, request, redirect, url_for
-
-UPLOAD_FOLDER = 'C:\\upload'
-ALLOWED_EXTENSIONS = set(['txt', 'zip'])
-
-app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
-
-def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
-
-
-@app.route("/", methods=['GET', 'POST'])
-def index():
-    if request.method == 'POST':
-        file = request.files['file']
-        if file and allowed_file(file.filename):
-            filename = file.filename
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return "上传成功"
-    return """
-    <!doctype html>
-    <title>Upload new File</title>
-    <h1>Upload new File</h1>
-    <form action="" method=post enctype=multipart/form-data>
-      <p><input type=file name=file>
-         <input type=submit value=Upload>
-    </form>
-    <p>%s</p>
-    """ % "<br>".join(os.listdir(app.config['UPLOAD_FOLDER'], ))
-
+from pymongo import MongoClient
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5001, debug=True)
+    client = MongoClient("localhost", 27017)
+    db = client.ts_db
+    rs_arr = []
+    for doc in db.score5.find().sort([("value", -1)]).limit(10):
+        print(doc)
