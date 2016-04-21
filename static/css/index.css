@@ -3,39 +3,47 @@
   padding: 0;
 }
 body {
-  text-align: center;
-  min-width: 900px;
-  background: #efdfef;
+  min-width: 1000px;
+  background: #e2e2e2;
   font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
 }
 li {
   list-style-type: none;
 }
 #header {
-  height: 40px;
-  background: #48525e;
+  text-align: center;
+  background-color: #fff;
+  height: 50px;
+  font-size: 15px;
+  font-weight: 500;
+  background-size: 44px 44px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+  padding: 0px 20px 0px 20px;
   border-bottom: none;
 }
 #header #header-container {
   margin: auto;
   color: #ddd;
-  width: 900px;
+  width: 1000px;
   text-align: left;
   font-size: 30px;
 }
-#header #header-container a {
-  color: #ddd;
+#header a {
+  font-size: 36px;
+  color: #666;
+  cursor: pointer;
   text-decoration: none;
 }
-#header #header-container a:hover,
-#header #header-container a:active {
+#header a:hover {
   text-decoration: none;
 }
-#header #header-container #right-div {
-  float: right;
+#header a:active {
+  text-decoration: none;
 }
-#header #header-container #right-div a {
-  font-size: 18px;
+#wrapper {
+  margin: 0 auto;
+  width: 1000px;
+  background: #e2e2e2 url("/static/img/shadow_light.png") repeat-x;
 }
 #footer {
   width: 100%;
@@ -48,10 +56,11 @@ li {
   zoom: 1;
   margin: 0;
 }
-#index-page a {
-  font-size: 36px;
-  cursor: pointer;
+#index-page {
+  width: 1000px;
+  margin: 0 auto;
+  padding-top: 60px;
 }
-#index-page a:hover {
-  text-decoration: none;
+#index-page a {
+  font-size: 25px;
 }

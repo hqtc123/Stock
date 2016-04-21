@@ -1,7 +1,7 @@
 <div id="poem-page" ng-controller="poemCtrl">
     <h2>全唐诗典故搜索</h2>
-    <input type="text" placeholder="输入典故，最多2个" ng-model="keyword">
-    <input type="button" value="搜索" ng-click="searchAllusion()">
+    <input type="text" class="input-lg" placeholder="输入词语，最多2个" ng-model="keyword">
+    <input type="button" class="btn btn-primary" value="搜索" ng-click="searchAllusion()">
     &nbsp;&nbsp;
     <input type="text" style="width: 36px" ng-model="interval"> (两个典故之间距离最大字数，默认-1,表示无限制）
     <h3>共找到结果{{count}}条</h3>

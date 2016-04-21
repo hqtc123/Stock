@@ -1,5 +1,5 @@
 @fa-font-path: "../font";
-@content-width :900px;
+@content-width : 1000px;
 
 * {
   margin: 0;
@@ -7,9 +7,8 @@
 }
 
 body {
-  text-align: center;
   min-width: @content-width;
-  background: #efdfef;
+  background: #e2e2e2;
   font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
 }
 
@@ -18,8 +17,14 @@ li {
 }
 
 #header {
-  height: 40px;
-  background: #48525e;
+  text-align: center;
+  background-color: #fff;
+  height: 50px;
+  font-size: 15px;
+  font-weight: 500;
+  background-size: 44px 44px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+  padding: 0px 20px 0px 20px;
   border-bottom: none;
   #header-container {
     margin: auto;
@@ -27,21 +32,25 @@ li {
     width: @content-width;
     text-align: left;
     font-size: 30px;
-    a {
-      color: #ddd;
-      text-decoration: none;
-    }
-    a:hover, a:active {
-      text-decoration: none;
-    }
-
-    #right-div {
-      float: right;
-      a {
-        font-size: 18px;
-      }
-    }
   }
+  a {
+    font-size: 36px;
+    color: #666;;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  a:active {
+    text-decoration: none;
+  }
+}
+
+#wrapper {
+  margin: 0 auto;
+  width: @content-width;
+  background: #e2e2e2 url("/static/img/shadow_light.png") repeat-x;
 }
 
 #footer {
@@ -58,11 +67,10 @@ li {
 
 //index-page
 #index-page {
+  width: 1000px;
+  margin: 0 auto;
+  padding-top: 60px;
   a {
-    font-size: 36px;
-    cursor: pointer;
-  }
-  a:hover {
-    text-decoration: none;
+    font-size: 25px;
   }
 }
