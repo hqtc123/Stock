@@ -1,5 +1,5 @@
 @fa-font-path: "../font";
-@content-width : 1000px;
+@content-width : 900px;
 
 * {
   margin: 0;
@@ -19,31 +19,32 @@ li {
 #header {
   text-align: center;
   background-color: #fff;
-  height: 50px;
-  font-size: 15px;
+  height: 39px;
   font-weight: 500;
   background-size: 44px 44px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.22);
-  padding: 0px 20px 0px 20px;
-  border-bottom: none;
   #header-container {
     margin: auto;
     color: #ddd;
     width: @content-width;
     text-align: left;
-    font-size: 30px;
-  }
-  a {
-    font-size: 36px;
-    color: #666;;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: none;
-  }
-  a:active {
-    text-decoration: none;
+    a {
+      font-size: 22px;
+      color: #666;;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+    a:active {
+      text-decoration: none;
+    }
+    .right-link {
+      font-size: 16px;
+      margin: 6px 0 0 15px;
+      float: right;
+    }
   }
 }
 
@@ -67,9 +68,12 @@ li {
 
 //index-page
 #index-page {
-  width: 1000px;
+  width: @content-width;
   margin: 0 auto;
-  padding-top: 60px;
+  padding-top: 2px;
+  img#index-back {
+    width: @content-width;
+  }
   a {
     font-size: 25px;
   }

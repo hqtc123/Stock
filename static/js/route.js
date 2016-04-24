@@ -14,5 +14,9 @@ app.config(["$routeProvider", function ($routeProvider) {
         templateUrl: "/static/templates/jplag.html"
     }).when("/allusion", {
         templateUrl: "/static/templates/allusion.html"
+    }).when("/about", {
+        templateUrl: "/static/templates/about.html"
+    }).when("/game", {
+        templateUrl: "/static/templates/game.html"
     }).otherwise({redirectTo: "/index/"})
 }]);

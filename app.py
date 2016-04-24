@@ -147,7 +147,7 @@ def internal_error(error):
 
 @app.route("/api/poem/search/<keyword>/<interval>", methods=["POST"])
 def search_allusion(keyword, interval):
-    client = MongoClient("localhost", 27017)
+    client = MongoClient("121.", 27017)
     db = client.ts_db
     index_collection = db["inverted_index"]
     poem_collection = db["ts_co2"]
