@@ -3,7 +3,7 @@
   padding: 0;
 }
 body {
-  min-width: 1000px;
+  min-width: 900px;
   background: #e2e2e2;
   font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
 }
@@ -13,36 +13,37 @@ li {
 #header {
   text-align: center;
   background-color: #fff;
-  height: 50px;
-  font-size: 15px;
+  height: 39px;
   font-weight: 500;
   background-size: 44px 44px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.22);
-  padding: 0px 20px 0px 20px;
-  border-bottom: none;
 }
 #header #header-container {
   margin: auto;
   color: #ddd;
-  width: 1000px;
+  width: 900px;
   text-align: left;
-  font-size: 30px;
 }
-#header a {
-  font-size: 36px;
+#header #header-container a {
+  font-size: 22px;
   color: #666;
   cursor: pointer;
   text-decoration: none;
 }
-#header a:hover {
+#header #header-container a:hover {
   text-decoration: none;
 }
-#header a:active {
+#header #header-container a:active {
   text-decoration: none;
+}
+#header #header-container .right-link {
+  font-size: 16px;
+  margin: 6px 0 0 15px;
+  float: right;
 }
 #wrapper {
   margin: 0 auto;
-  width: 1000px;
+  width: 900px;
   background: #e2e2e2 url("/static/img/shadow_light.png") repeat-x;
 }
 #footer {
@@ -57,9 +58,12 @@ li {
   margin: 0;
 }
 #index-page {
-  width: 1000px;
+  width: 900px;
   margin: 0 auto;
-  padding-top: 60px;
+  padding-top: 2px;
+}
+#index-page img#index-back {
+  width: 900px;
 }
 #index-page a {
   font-size: 25px;
