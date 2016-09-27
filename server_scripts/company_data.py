@@ -6,7 +6,7 @@ from sqlalchemy.orm.exc import NoResultFound
 import uuid
 import sys
 
-sys.path.append("/home/hqdo/Stock")
+sys.path.append("/home/hqdo/hqdo")
 from model import CompanyEntity
 import app_config
 

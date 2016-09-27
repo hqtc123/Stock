@@ -6,7 +6,7 @@ from datetime import date
 import uuid
 import sys
 
-sys.path.append("/home/hqdo/Stock")
+sys.path.append("/home/hqdo/hqdo")
 from model import *
 import app_config
 
@@ -25,8 +25,8 @@ price_list = []
 deal_info_list = []
 base_url = "http://hq.sinajs.cn/list="
 index_code_arr = ["sh000001", "sz399001", "sz399006"]
-duplicate = True
-
+duplicate = False
+'''
 for code in index_code_arr:
     url = base_url + code
     change_url = base_url + "s_" + code
@@ -62,7 +62,7 @@ for code in index_code_arr:
     else:
         if round(last_price.now) != round(float(price.now)):
             duplicate = False
-
+'''
 if duplicate:
     print("duplicate")
     exit()
