@@ -145,95 +145,6 @@ def internal_error(error):
     return "internal error " + str(error)
 
 
-@app.route("/api/poem/search/<keyword>/<interval>", methods=["POST"])
-def search_allusion(keyword, interval):
-    client = MongoClient("121.", 27017)
-    db = client.ts_db
-    index_collection = db["inverted_index"]
-    poem_collection = db["ts_co2"]
-    rs_dict = {
-        "code": 0,
-        "data": {"msg": "not found", "count": 0}
-    }
-
-    interval = -1 if len(interval) == 0 else int(interval)
-    keyword = keyword.replace(" ", "+")
-    # 搜索两个典面
-    if "+" in keyword:
-        key_list = keyword.split("+")
-        if len(key_list) != 2:
-            return flask.jsonify({"code": 1, "data": "输入格式不正确"})
-        (key1, key2) = (key_list[0], key_list[1])
-        # 查询两个典故的索引列表
-        rs_doc1 = index_collection.find_one({"_id": key1})
-        rs_doc2 = index_collection.find_one({"_id": key2})
-        if rs_doc1 is None or rs_doc2 is None:
-            return flask.jsonify(rs_dict)
-        (poem_list1, poem_list2) = (rs_doc1["value"]["arr"], rs_doc2["value"]["arr"])
-        rs_dict["data"] = {"count": 0, "poems": []}
-        # 遍历查询的索引列表，求出给定条件的集合
-        for poem1 in poem_list1:
-            for poem2 in poem_list2:
-                if poem1["poem_id"] == poem2["poem_id"]:
-                    if interval > 0:
-                        real_interval = poem1["position"] - poem2["position"] - len(key2)
-                        if real_interval < 0:
-                            real_interval = poem2["position"] - poem1["position"] - len(key1)
-                        if real_interval > interval:
-                            continue
-
-                    poem_doc = poem_collection.find_one({"_id": poem1["poem_id"]})
-                    rs_dict["data"]["poems"].append({
-                        "title": poem_doc["title"],
-                        "author": poem_doc["author"],
-                        "sentence": poem_doc["content_arr"][int(poem1["sentence_index"])] + " & " +
-                                    poem_doc["content_arr"][int(poem2["sentence_index"])],
-                        "content": poem_doc["content"],
-                        "category": poem_doc["category"]
-                    })
-        rs_dict["data"]["count"] = len(rs_dict["data"]["poems"])
-        return flask.jsonify(rs_dict)
-
-    # 搜索单个典面
-    keyword1 = keyword[0:3] if len(keyword) > 3 else keyword
-    rs_doc = index_collection.find_one({"_id": keyword1})
-    if rs_doc is None:
-        return flask.jsonify(rs_dict)
-    poem_list = rs_doc["value"]["arr"]
-    rs_dict["data"] = {"count": 0, "poems": []}
-
-    for poem in poem_list:
-        poem_doc = poem_collection.find_one({"_id": poem["poem_id"]})
-        if poem_doc is None:
-            rs_dict["data"]["poems"].append(str(poem["poem_id"]))
-            continue
-        if len(keyword) > 3:
-            if keyword not in poem_doc["content_arr"][int(poem["sentence_index"])]:
-                continue
-        rs_dict["data"]["poems"].append({
-            "title": poem_doc["title"],
-            "author": poem_doc["author"],
-            "sentence": poem_doc["content_arr"][int(poem["sentence_index"])],
-            # "content": poem_doc["content"],
-            "category": poem_doc["category"]
-        })
-    rs_dict["data"]["count"] = len(rs_dict["data"]["poems"])
-    return flask.jsonify(rs_dict)
-
-
-@app.route("/api/allusion/advice", methods=["POST"])
-def advice_allusion():
-    rs_dict = DEFAULT_RS_DICT
-    client = MongoClient("localhost", 27017)
-    db = client.ts_db
-    rs_arr = []
-    for doc in db.score5.find().sort([("value", -1)]).skip(1).limit(10):
-        rs_arr.append({"_id": doc["_id"], "value": doc["value"]})
-    rs_dict["data"] = rs_arr
-    return flask.jsonify(rs_dict)
-
-
-# ==========================================代码查重=============
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
 
@@ -249,25 +160,6 @@ def upload():
             rs_dict["data"] = {"fileName": file.filename}
             return flask.jsonify(rs_dict)
 
-    return flask.jsonify(SERVER_ERR_DICT)
-
-
-@app.route("/api/jplag/check", methods=["POST"])
-def jplag_check():
-    params = request.get_json()
-    if params["codeFile"] != "":
-        os.system("rm -f /home/hqdo/Stock/upload/code/*")
-        os.system("rm -f /home/hqdo/Stock/upload/base/*")
-        os.system("rm -f /home/hqdo/Stock/jplag_result/*")
-        os.system("unzip /home/hqdo/Stock/upload/" + params["codeFile"] + " -d /home/hqdo/Stock/upload/code")
-        command = "java -jar /home/hqdo/discussClass/jplag-2.11.8.jar -l " + params[
-            "lang"] + " -s /home/hqdo/Stock/upload/code -r /home/hqdo/Stock/jplag_result"
-        if params["baseFile"] != "":
-            os.system("unzip /home/hqdo/Stock/upload/" + params["baseFile"] + " -d /home/hqdo/Stock/upload/base")
-            command += " -bc /home/hqdo/Stock/upload/base"
-
-        os.system(command)
-        return flask.jsonify(DEFAULT_RS_DICT)
     return flask.jsonify(SERVER_ERR_DICT)
 
 
