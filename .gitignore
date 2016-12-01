@@ -12,3 +12,7 @@ target/
 
 # jrebel #
 src/main/resources/rebel.xml
+
+# Java #
+*.class
+*.jar
