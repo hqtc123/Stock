@@ -24,8 +24,9 @@
 
 package net.hqdo.stock.mapper;
 
-import org.apache.ibatis.annotations.*;
 import net.hqdo.stock.model.City2;
+import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -35,6 +36,7 @@ import java.util.List;
  * @author liuzh
  * @since 2016-03-06 17:22
  */
+@Component
 public interface MyBatis331Mapper {
 
     /**
@@ -46,7 +48,7 @@ public interface MyBatis331Mapper {
     @Insert("<script>" +
             "insert into city (id, name, state) values " +
             "<foreach collection=\"list\" item=\"city\" separator=\",\" >" +
-                "(#{city.id}, #{city.cityName}, #{city.cityState})" +
+            "(#{city.id}, #{city.cityName}, #{city.cityState})" +
             "</foreach>" +
             "</script>")
     @Options(useGeneratedKeys = true, keyProperty = "id")
@@ -59,9 +61,9 @@ public interface MyBatis331Mapper {
      * @return
      */
     @Results(id = "cityResult", value = {
-        @Result(property = "id", column = "id", id = true),
-        @Result(property = "cityName", column = "name", id = true),
-        @Result(property = "cityState", column = "state", id = true)
+            @Result(property = "id", column = "id", id = true),
+            @Result(property = "cityName", column = "name", id = true),
+            @Result(property = "cityState", column = "state", id = true)
     })
     @Select("select id, name, state from city where id = #{id}")
     City2 selectByCityId(Integer id);

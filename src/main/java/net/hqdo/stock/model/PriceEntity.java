@@ -5,7 +5,8 @@ import java.sql.Date;
 import java.sql.Timestamp;
 
 /**
- * Created by Qing on 2016/12/6.
+ * @author Qing
+ * @since 2016/12/6.
  */
 @Entity
 @Table(name = "price", schema = "stock")

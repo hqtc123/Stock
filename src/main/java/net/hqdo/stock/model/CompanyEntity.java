@@ -4,7 +4,8 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by Qing on 2016/12/6.
+ * @author Qing
+ * @since 2016/12/6.
  */
 @Entity
 @Table(name = "company", schema = "stock")

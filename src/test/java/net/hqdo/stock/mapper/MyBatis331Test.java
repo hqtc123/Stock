@@ -24,7 +24,7 @@
 
 package net.hqdo.stock.mapper;
 
-import net.hqdo.stock.Application;
+import net.hqdo.stock.StockApplication;
 import net.hqdo.stock.model.City2;
 import org.junit.Assert;
 import org.junit.Test;
@@ -48,7 +48,7 @@ import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @Transactional
-@SpringApplicationConfiguration(Application.class)
+@SpringApplicationConfiguration(StockApplication.class)
 public class MyBatis331Test {
     private Logger logger = LoggerFactory.getLogger(getClass());
 

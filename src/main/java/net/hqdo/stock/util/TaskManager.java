@@ -4,7 +4,8 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by Qing on 2016/12/6.
+ * @author Qing
+ * @since 2016/12/6.
  */
 @Component
 public class TaskManager {
