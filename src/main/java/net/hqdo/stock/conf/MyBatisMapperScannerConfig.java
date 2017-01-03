@@ -38,7 +38,7 @@ import java.util.Properties;
  * @since 2015-12-19 14:46
  */
 @Configuration
-//TODO 注意，由于MapperScannerConfigurer执行的比较早，所以必须有下面的注解
+// 注意，由于MapperScannerConfigurer执行的比较早，所以必须有下面的注解
 @AutoConfigureAfter(MyBatisConfig.class)
 public class MyBatisMapperScannerConfig {
 
