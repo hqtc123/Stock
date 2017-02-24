@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *.iml
 
 .idea/*
@@ -5,3 +6,24 @@
 *.pyc
 
 app_config.py
+=======
+# Maven #
+target/
+
+# IDEA #
+.idea/
+*.iml
+out/
+
+# Eclipse #
+.settings/
+.classpath
+.project
+
+# jrebel #
+src/main/resources/rebel.xml
+
+# Java #
+*.class
+*.jar
+>>>>>>> c506fdcd723a1052bdd0a11022cdc58b2d3308be
